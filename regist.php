@@ -2,6 +2,9 @@
 
 include 'conn.php';
 
+$error = false;
+$empty = false;
+
 if(isset($_POST['regist'])){
     $nama = $_POST['Nama'];
     $NPM = strtolower(stripcslashes($_POST['NPM']));
@@ -11,13 +14,7 @@ if(isset($_POST['regist'])){
     $cekNPM = mysqli_query($conn, "SELECT NPM FROM users WHERE NPM = '$NPM' ");
 
     if(mysqli_fetch_assoc($cekNPM)){
-        echo "
-        <script>
-        alert('NPM Telah terdaftar');
-        window.location.href = 'regist.php';
-        </script>
-        ";
-        return false;
+       $error = true;
     }
 
     else if($NPM && $password && $tglLahir && $nama != ""){
@@ -43,11 +40,7 @@ if(isset($_POST['regist'])){
         }
     }
     else{
-        echo "
-        <script>
-        alert('Data tidak boleh kosong')
-        </script>
-        ";
+        $empty = true;
     }
 }
 
@@ -58,7 +51,7 @@ if(isset($_POST['regist'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-learning Informatika</title>
+    <title>Sign Up Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -73,12 +66,12 @@ if(isset($_POST['regist'])){
 
 
         <div class=" flex  items-center justify-center h-[calc(100%-4rem)] p-2">
-            <div class="bg-slate-500 h-5/6 rounded-lg w-96 p-11 flex  flex-col">
-                <div class="text-center pb-5">
+            <div class="bg-slate-500 h-auto rounded-lg w-96 p-11 flex  flex-col">
+                <div class="text-center pb-3">
                     <h3 class="text-xl text-white">Sign Up</h3>
                 </div>
                 <div class="py-2 ">
-                    <form method = "post" class="flex flex-col gap-5 ">
+                    <form method = "post" class="flex flex-col gap-3 ">
                         <label for="Nama" class="text-white">
                             Nama
                         </label>
@@ -94,9 +87,30 @@ if(isset($_POST['regist'])){
                         <label for="password" class="text-white">Password</label>
                         <input class="rounded-md border-none text-lg" type="password" name="password" id="password">
                         <button type="submit" name="regist" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded shadow hover:bg-blue-600 active:bg-blue-700 cursor-pointer"> SIGN UP </button>
-                        <div class="flex justify-center">
-                            <p class="text-white text-sm mr-2">Already have an account ?</p>
-                            <a href="login.php" class="text-white text-sm underline">Sign In here</a>
+                        <div class="flex justify-center flex-col">
+                            <div class="flex justify-center">
+                                <p class="text-white text-sm mr-2">Already have an account ?</p>
+                                <a href="login.php" class="text-white text-sm underline">Sign In here</a>
+                            </div>
+
+                            <div class="text-red-600 justify-center flex font-bold">
+
+                                <?php
+                            if($error == true ){
+                                
+                                
+                                ?>
+                            <p class="text-sm">NPM telah terdaftar !</p>
+                            
+                            <?php } else if($empty == true){
+                                ?>
+                            <p class="text-sm">Data tidak boleh kosong !</p>
+                            
+                            
+                            <?php
+                            }
+                            ?>
+                        </div>
                         </div>
                     </form>
                 </div>
