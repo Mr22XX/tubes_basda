@@ -4,6 +4,12 @@ if(isset($_SESSION['login'])){
     header("Location:index.php");
     exit;
 }
+if(isset($_SESSION['admin'])){
+    header("Location:admin.php");
+    exit;
+}
+
+
 
 include 'conn.php';
 
@@ -30,6 +36,11 @@ if(isset($_POST['login'])){
                 </script>
                 ";
             }
+    }
+    else if($NPM == "admin" && $password == "123"){
+        $_SESSION['admin'] = true;
+        header("Location:admin.php");
+            exit;
     }
     else{
         echo "
