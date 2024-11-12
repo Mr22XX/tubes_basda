@@ -42,7 +42,6 @@ include "conn.php";
                         <div class="flex gap-4 w-80 lg:h-20 justify-end ml-12 text-center">
                             <a  href="jadwal.php" class=" text-center w-36 h-10 bg-yellow-500 text-white font-semibold py-2 px-4 rounded shadow hover:bg-yellow-600 active:bg-yellow-700 cursor-pointer" download="">Download</a>
                         </div>
-                        
                     </div>
                 </div>
             </div>

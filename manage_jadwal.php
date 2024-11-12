@@ -28,8 +28,11 @@
 
 
 
-    <div class="relative overflow-x-auto shadow-md ">
-        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <div class="relative overflow-x-auto h-screen shadow-md ">
+    <div class="flex end-0 justify-end p-5 bg-white">
+        <a  href="admin.php?page=create_jadwal" class=" text-center w-36 h-10 bg-green-500 text-white font-semibold py-2 px-4 rounded shadow hover:bg-green-600 active:bg-green-700 cursor-pointer" >Add</a>
+    </div>
+        <table class="w-full text-sm text-left  h-48 rtl:text-right text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="px-6 py-3">
@@ -89,10 +92,10 @@
                         <?=$data['hari'] . " ". $data['tanggal']?>
                     </td>
                     <td class="px-6 py-4">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        <a href="admin.php?page=edit_jadwal" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                     </td>
                     <td class="px-6 py-4">
-                        <a href="admin.php?page=manage_jadwal&hal=hapus&kode_matkul=<?=$data['kode_matkul']?>" class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
+                        <a href="admin.php?page=manage_jadwal&hal=hapus&kode_matkul=<?=$data['kode_matkul']?>" class="font-medium text-red-600 dark:text-red-500 hover:underline" >Delete</a>
                     </td>
                 </tr>
             <?php
@@ -101,9 +104,7 @@
             </tbody>
         </table>
     </div>
-    <div class="flex end-0 justify-end p-5">
-        <a  href="jadwal.php" class=" text-center w-36 h-10 bg-green-500 text-white font-semibold py-2 px-4 rounded shadow hover:bg-green-600 active:bg-green-700 cursor-pointer" >Add</a>
-    </div>
+    
 
 
     
