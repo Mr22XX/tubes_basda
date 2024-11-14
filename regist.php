@@ -68,7 +68,7 @@ if(isset($_POST['regist'])){
         <div class=" flex  items-center justify-center h-[calc(100%-4rem)] p-2">
             <div class="bg-slate-500 h-auto rounded-lg w-96 p-11 flex  flex-col">
                 <div class="text-center pb-3">
-                    <h3 class="text-xl text-white">Sign Up</h3>
+                    <h3 class="text-xl text-white">Daftar Akun</h3>
                 </div>
                 <div class="py-2 ">
                     <form method = "post" class="flex flex-col gap-3 ">
@@ -89,8 +89,8 @@ if(isset($_POST['regist'])){
                         <button type="submit" name="regist" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded shadow hover:bg-blue-600 active:bg-blue-700 cursor-pointer"> SIGN UP </button>
                         <div class="flex justify-center flex-col">
                             <div class="flex justify-center">
-                                <p class="text-white text-sm mr-2">Already have an account ?</p>
-                                <a href="login.php" class="text-white text-sm underline">Sign In here</a>
+                                <p class="text-white text-sm mr-2">Sudah punya akun ?</p>
+                                <a href="login.php" class="text-white text-sm underline">Masuk</a>
                             </div>
 
                             <div class="text-red-600 justify-center flex font-bold">

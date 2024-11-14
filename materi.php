@@ -25,7 +25,7 @@ include "conn.php";
 </head>
 <body>
     
-<div class="h-auto bg-slate-600">
+<div class="min-h-screen h-auto bg-slate-600">
         <div class="bg-gradient-to-r from-slate-800 to-slate-500 h-16 flex w-full justify-between items-center p-3">
             <div class="flex justify-between items-center">
                     <h3 class="font-sans text-lg text-white">Selamat Datang <?= $_SESSION['NPM'] ?></h3>
@@ -35,15 +35,26 @@ include "conn.php";
         </div>
 
         <div class="flex flex-wrap">
+                <?php
+                $query = "SELECT * FROM materi";
+                $result = mysqli_query($conn, $query);
+                while($row = mysqli_fetch_assoc($result)){
+
+                
+                
+                ?>
             <div class=" flex p-2">
                     <div class=" p-3 flex gap-3 flex-col border-white border-solid border-2 rounded">
-                        <h3 class="text-2xl text-white w-96 ">E-Learning Informatika</h3>
-                        <p class="text-white w-96 text-justify">E-learning Informatika adalah sebuah platform pembelajaran daring yang digunakan mahasiswa Informatika, digunakan untuk mendukung proses belajar-mengajar secara online.</p>
+                        <h3 class="text-2xl text-white w-96 "><?=$row['judul']?></h3>
+                        <p class="text-white w-96 text-justify"><?=$row['desk']?></p>
                         <div class="flex gap-4 w-80 lg:h-20 justify-end ml-12 text-center">
-                            <a  href="jadwal.php" class=" text-center w-36 h-10 bg-yellow-500 text-white font-semibold py-2 px-4 rounded shadow hover:bg-yellow-600 active:bg-yellow-700 cursor-pointer" download="">Download</a>
+                            <a href="<?=$row['download']?>" class=" text-center w-36 h-10 bg-yellow-500 text-white font-semibold py-2 px-4 rounded shadow hover:bg-yellow-600 active:bg-yellow-700 cursor-pointer" download="<?=$row['download']?>">Download</a>
                         </div>
                     </div>
                 </div>
+                        <?php
+                }
+                        ?>
             </div>
 
 

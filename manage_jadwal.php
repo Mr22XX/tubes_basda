@@ -92,7 +92,7 @@
                         <?=$data['hari'] . " ". $data['tanggal']?>
                     </td>
                     <td class="px-6 py-4">
-                        <a href="admin.php?page=edit_jadwal" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        <a href="admin.php?page=edit_jadwal&hal=edit&kode_matkul=<?=$data['kode_matkul']?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                     </td>
                     <td class="px-6 py-4">
                         <a href="admin.php?page=manage_jadwal&hal=hapus&kode_matkul=<?=$data['kode_matkul']?>" class="font-medium text-red-600 dark:text-red-500 hover:underline" >Delete</a>

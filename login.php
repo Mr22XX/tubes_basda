@@ -88,8 +88,8 @@ if(isset($_POST['login'])){
                         <input class="rounded-md border-none" type="password" name="password" id="password">
                         <button type="submit" name="login" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded shadow hover:bg-blue-600 active:bg-blue-700 cursor-pointer"> Login   </button>
                         <div class="flex justify-center">
-                            <p class="text-white text-sm mr-2">Dont have an account ? </p>
-                            <a href="regist.php" class="text-white text-sm underline">Sign Up here</a>
+                            <p class="text-white text-sm mr-2">Belum Punya akun? </p>
+                            <a href="regist.php" class="text-white text-sm underline">Daftar disini</a>
                         </div>
                     </form>
                 </div>
