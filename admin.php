@@ -77,6 +77,9 @@ $page = $_GET['page'] ?? "";
             else if($page == "create_materi"){
                 require "create_materi.php";
             }
+            else if($page == "edit_materi"){
+                require "edit_materi.php";
+            }
             else{
 
             

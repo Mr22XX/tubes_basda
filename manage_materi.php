@@ -4,19 +4,19 @@ include "conn.php";
 
 if(isset($_GET['hal'])){
     if($_GET['hal'] == "hapus" ){
-        $query = "DELETE FROM jadwal WHERE kode_matkul = '$_GET[kode_matkul]'";
+        $query = "DELETE FROM materi WHERE kode_materi = '$_GET[kode_materi]'";
         $hasil = mysqli_query($conn, $query);
 
         if($hasil){
             echo "<script>
                     alert('Hapus data berhasil !');
-                    document.location='admin.php?page=manage_jadwal';
+                    document.location='admin.php?page=manage_materi';
                 </script>";
         }
         else{
             echo "<script>
             alert('Hapus data Gagal !');
-            document.location='admin.php?page=manage_jadwal';
+            document.location='admin.php?page=manage_materi';
         </script>";
         }
     }
@@ -81,10 +81,10 @@ if(isset($_GET['hal'])){
                 </td>
                 </td>
                 <td class="px-6 py-4">
-                    <a href="admin.php?page=edit_jadwal&hal=edit&kode_matkul" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                    <a href="admin.php?page=edit_materi&hal=edit&kode_materi=<?=$data['kode_materi']?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                 </td>
                 <td class="px-6 py-4">
-                    <a href="admin.php?page=manage_jadwal&hal=hapus&kode_matkul" class="font-medium text-red-600 dark:text-red-500 hover:underline" >Delete</a>
+                    <a href="admin.php?page=manage_materi&hal=hapus&kode_materi=<?=$data['kode_materi']?>" class="font-medium text-red-600 dark:text-red-500 hover:underline" >Delete</a>
                 </td>
             </tr>
         <?php
