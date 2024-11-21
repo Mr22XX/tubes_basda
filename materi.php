@@ -46,6 +46,7 @@ include "conn.php";
             <div class=" flex p-2">
                     <div class=" p-3 flex gap-3 flex-col border-white border-solid border-2 rounded">
                         <h3 class="text-2xl text-white w-96 "><?=$row['judul']?></h3>
+                        <img src="https://stttekstil.ac.id/wp-content/uploads/2022/02/generasi-milenial-makin-tertarik-dengan-kuliah-online-ini-buktinya-Oz2qQ2MyhB.jpeg" alt="" class="h-48 rounded-sm w-full">
                         <p class="text-white w-96 text-justify"><?=$row['desk']?></p>
                         <div class="flex gap-4 w-80 lg:h-20 justify-end ml-12 text-center">
                             <a href="<?=$row['download']?>" class=" text-center w-36 h-10 bg-yellow-500 text-white font-semibold py-2 px-4 rounded shadow hover:bg-yellow-600 active:bg-yellow-700 cursor-pointer" download="<?=$row['download']?>">Download</a>

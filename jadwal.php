@@ -22,12 +22,13 @@ include "conn.php";
     <link href="https://cdn.datatables.net/v/dt/jq-3.7.0/jszip-3.10.1/dt-2.1.8/b-3.1.2/b-html5-3.1.2/fc-5.0.4/fh-4.0.1/r-3.0.3/sb-1.8.1/datatables.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.tailwindcss.com"></script>
+    
 </head>
 <body>
     
 
-    <div class="table-auto m-2 ">
-        <table border="1" class="hover:table-fixed w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400" id="myTable">
+    <div class="table-auto m-2  ">
+        <table border="1" class="hover:table-fixed w-full text-sm text-left rtl:text-right  text-gray-500 dark:text-gray-400" id="myTable">
             <thead class="thead-dark bg-slate-400 text-white rounded-sm">
                 <tr>
                     <th scope="col">Kode Matkul</th>
@@ -69,6 +70,7 @@ include "conn.php";
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
 <script src="https://cdn.datatables.net/v/dt/jq-3.7.0/jszip-3.10.1/dt-2.1.8/b-3.1.2/b-html5-3.1.2/fc-5.0.4/fh-4.0.1/r-3.0.3/sb-1.8.1/datatables.min.js"></script>
 <script>

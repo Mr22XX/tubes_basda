@@ -23,25 +23,32 @@ if(isset($_POST['login'])){
     if(mysqli_num_rows($result)  === 1){
         $row  = mysqli_fetch_assoc($result);
 
-        if(password_verify($password, $row['password'])){
-            $_SESSION['login'] = true;
-            $_SESSION['NPM'] = $NPM;
-            header("Location:index.php");
-            exit;
+        if(password_verify($password, $row['password']) && $row['role'] == "user"){
+                $_SESSION['login'] = true;
+                $_SESSION['NPM'] = $NPM;
+                header("Location:index.php");
+                exit;
+            
+            }
+            else if(password_verify($password, $row['password']) && $row['role'] == "admin"){
+                $_SESSION['admin'] = true;
+                header("Location:admin.php");
+                exit;
+            }
+            else if(password_verify($password, $row['password']) && $row['role'] == "dosen"){
+                $_SESSION['dosen'] = true;
+                header("Location:dosen.php");
+                exit;
             }
             else{
                 echo "
                 <script>
-                 alert('Password salah: " . $row['password'] . " | Entered: " . $password . "');
+                 alert('Password salah');
                 </script>
                 ";
             }
     }
-    else if($NPM == "admin" && $password == "123"){
-        $_SESSION['admin'] = true;
-        header("Location:admin.php");
-            exit;
-    }
+  
     else{
         echo "
         <script>

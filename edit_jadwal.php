@@ -33,18 +33,24 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     SKS = '$_POST[sks]',
     ruangan = '$_POST[ruangan]',
     hari = '$_POST[hari]',
-    tanggal = '$_POST[kode]'
+    tanggal = '$_POST[date]'
     WHERE kode_matkul = '$_GET[kode_matkul]'
     ";
     $hasil = mysqli_query($conn, $query);
 
     if($hasil){
-        echo"
-        <script>
-        alert('Jadwal berhasil diedit');
-        window.location.href = 'admin.php?page=manage_jadwal'
-        </script>
-        ";
+      echo "<script>
+      Swal.fire({
+          title: 'Berhasil!',
+          text: 'Jadwal berhasil diedit.',
+          icon: 'success',
+          confirmButtonText: 'OK'
+      }).then((result) => {
+          if (result.isConfirmed) {
+              window.location = 'admin.php?page=manage_jadwal';
+          }
+      });
+      </script>";
     }
     else{
         echo"
@@ -91,7 +97,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         <label for="hari" class="peer-focus:font-medium absolute text-sm text-gray-800 dark:text-gray-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-gray-900 peer-focus:dark:text-gray-900 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Hari</label>
     </div>
       <div class="relative z-0 w-full mb-5 group">
-        <input type="date"  name="date" id="date" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-900 appearance-none dark:text-white dark:border-gray-900 dark:focus:border-gray-900 focus:outline-none focus:ring-0 focus:border-gray-900 peer" placeholder=" " required  value="<?=$vtanggal?>"/>
+        <input type="date"  name="date" id="date" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-900 appearance-none dark:text-white dark:border-gray-900 dark:focus:border-gray-900 focus:outline-none focus:ring-0 focus:border-gray-900 peer" placeholder=" " required  value="<?=$vdate?>"/>
         <label for="date" class="peer-focus:font-medium absolute text-sm text-gray-800 dark:text-gray-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-gray-900 peer-focus:dark:text-gray-900 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Tanggal</label>
     </div>
     

@@ -30,18 +30,24 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $hasil = mysqli_query($conn, $query);
 
     if($hasil){
-        echo"
-        <script>
-        alert('Materi berhasil diedit');
-        window.location.href = 'admin.php?page=manage_materi'
-        </script>
-        ";
+        echo "<script>
+        Swal.fire({
+            title: 'Berhasil!',
+            text: 'Materi berhasil diedit.',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location = 'dosen.php?page=manage_materi';
+            }
+        });
+        </script>";
     }
     else{
         echo"
         <script>
         alert('Materi gagal diedit');
-        window.location.href = 'admin.php?page=manage_materi'
+        window.location.href = 'dosen.php?page=manage_materi'
         </script>
         ";
     }

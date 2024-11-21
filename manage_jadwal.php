@@ -9,9 +9,17 @@
 
             if($hasil){
                 echo "<script>
-                        alert('Hapus data berhasil !');
-                        document.location='admin.php?page=manage_jadwal';
-                    </script>";
+      Swal.fire({
+          title: 'Berhasil!',
+          text: 'Jadwal berhasil dihapus.',
+          icon: 'success',
+          confirmButtonText: 'OK'
+      }).then((result) => {
+          if (result.isConfirmed) {
+              window.location = 'admin.php?page=manage_jadwal';
+          }
+      });
+      </script>";
             }
             else{
                 echo "<script>

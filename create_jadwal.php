@@ -12,12 +12,18 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $result = mysqli_query($conn, $query);
 
     if($result){
-        echo"
-        <script>
-        alert('Jadwal berhasil ditambahkan');
-        window.location.href = 'admin.php?page=manage_jadwal'
-        </script>
-        ";
+      echo "<script>
+      Swal.fire({
+          title: 'Berhasil!',
+          text: 'Jadwal berhasil ditambahkan.',
+          icon: 'success',
+          confirmButtonText: 'OK'
+      }).then((result) => {
+          if (result.isConfirmed) {
+              window.location = 'admin.php?page=manage_jadwal';
+          }
+      });
+      </script>";
     }
     else{
         echo"

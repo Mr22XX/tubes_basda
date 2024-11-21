@@ -19,7 +19,7 @@ if(isset($_POST['regist'])){
 
     else if($NPM && $password && $tglLahir && $nama != ""){
         $password = password_hash($password, PASSWORD_DEFAULT);
-        $query = "INSERT INTO users VALUES ('$NPM', '$nama', '$tglLahir', '$password'  )";
+        $query = "INSERT INTO users VALUES ('$NPM', '$nama', '$tglLahir', '$password' , 'user' )";
         $hasil = mysqli_query($conn, $query);
 
         if($hasil){
